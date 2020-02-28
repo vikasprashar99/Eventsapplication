@@ -1,52 +1,8 @@
-
-
-
+<!-- DIALOG FOR ADDING EVENTS -->
 <div style="overflow: hidden;">
 <h2 mat-dialog-title>Create Event </h2>  
 <mat-dialog-content >
-      <!-- <div fxLayout="column" (ngSubmit)="save()">
-    <mat-form-field>
-        <input matInput
-                placeholder="Title of Event"
-               [formControl]="title" required>
-    </mat-form-field>
-    <mat-error *ngIf="title.invalid">{{ getErrorMessage() }}</mat-error> 
-
-    <mat-form-field>
-        <input matInput
-                placeholder="Name of Expert"
-               [formControl]="nameOfExpert" required>
-    </mat-form-field>
-    <mat-form-field>
-        <input type="date" matInput
-                placeholder="Date of Event"
-               [formControl]="DateOfEvent" required>
-    </mat-form-field>
-    <mat-form-field>
-        <input type="datetime" matInput
-                placeholder="Time of Event"
-               [formControl]="TimeOfEvent" required>
-    </mat-form-field>
-    <mat-form-field>
-        <input matInput
-                placeholder="Description of Event"
-               [formControl]="description" required>
-    </mat-form-field>
-    <mat-form-field>
-        <input matInput
-                placeholder="Location"
-               [formControl]="location" required>
-    </mat-form-field>
-    
-    <mat-form-field>
-        <input type="number" matInput
-                placeholder="Mobile Number of the Person Posting the event"
-               [formControl]="mobilenumber" maxlength="10" required>
-    </mat-form-field>
-</div> -->
-
 <form (ngSubmit)="onSubmit()" >
-    <!-- FULLNAME FIELD -->
     <div fxLayout="column" fxLayoutGap="10px">
     <mat-form-field class="form-field">
       <input
@@ -56,9 +12,7 @@
         required
       />
       <mat-error *ngIf="title.invalid">{{ getUsernameMessage() }}</mat-error> 
-
-      </mat-form-field
-    >
+      </mat-form-field >
     <mat-form-field class="form-field">
       <input
       type="text"
@@ -134,14 +88,5 @@
     </button>
 </div>
 </form>
-
 </mat-dialog-content>
-<!-- 
-<mat-dialog-actions>
-    <div fxLayout="row" fxLayoutGap="30%" >
-        <button mat-raised-button color="warn" (click)="close()">Close</button>
-    <button class="mat-raised-button mat-primary"type=submit>Save</button>
-</div>
-
-</mat-dialog-actions> -->
 </div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef, MatSnackBar} from "@angular/material";
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { EventsSersviceService } from '../events-sersvice.service';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-event-dialog',
@@ -9,12 +11,12 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class EventDialogComponent implements OnInit {
 
-  constructor(private dialogRef: MatDialogRef<EventDialogComponent>,private _snackBar: MatSnackBar
+  constructor(private dialogRef: MatDialogRef<EventDialogComponent>,private _snackBar: MatSnackBar,private eservice:EventsSersviceService
     ) { }
 
   ngOnInit() {
   }
-
+//FORM CONTROLS FOR FIELDS
     title= new FormControl("", [Validators.required])
     nameOfExpert= new FormControl("", [Validators.required])
     DateOfEvent= new FormControl("", [Validators.required])
@@ -23,6 +25,8 @@ export class EventDialogComponent implements OnInit {
     location= new FormControl("", [Validators.required])
     mobilenumber= new FormControl("", [Validators.required])
 
+
+    // VALIDATORS
 getUsernameMessage(){
   return this.title.hasError("required")
   ? "You must enter a Title"
@@ -58,9 +62,10 @@ getmobilenumberMessage(){
   ? "You must enter a value"
   : "";
 }
-
+// AFTER SUBMITTING THE DATA
   onSubmit() {
   var data={
+    uid:uuidv4(),
 title:this.title.value,
 nameOfExpert:this.nameOfExpert.value,
 DateOfEvent:this.nameOfExpert.value,
@@ -84,7 +89,14 @@ mobilenumber:this.mobilenumber.value
       });
     }
     else{
-console.log(data)
+this.eservice.postEventsDataApiCall(data).subscribe(res =>{
+})
+const message = "Successfullt added a Event ";
+  const action = "";
+  this._snackBar.open(message, action, {
+    duration: 2000
+  });
+  this.dialogRef.close();
     } 
   }
 }

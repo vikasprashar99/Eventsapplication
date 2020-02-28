@@ -1,38 +1,25 @@
+<!-- ALL EVENTS -->
 <div align="center">
     <h1>EVENTS</h1>
-    
 <mat-accordion>
-    <mat-expansion-panel>
+    <mat-expansion-panel *ngFor="let events of EventsArray">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Personal data
+          {{events.title}}
         </mat-panel-title>
         <mat-panel-description>
-          Type your name and age
+         <b>Date:</b> {{events.DateOfEvent}} &nbsp;&nbsp;<b>Time:</b>{{events.TimeOfEvent}}
         </mat-panel-description>
       </mat-expansion-panel-header>
-  
-      <mat-form-field>
-        <mat-label>First name</mat-label>
-        <input matInput>
-      </mat-form-field>
-  
-      <mat-form-field>
-        <mat-label>Age</mat-label>
-        <input matInput type="number" min="1">
-      </mat-form-field>
+  <h3>Description:{{events.description}}</h3>
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+
+  <h3>Name of Speaker:{{events.nameOfExpert}}</h3>
+  <h3>Location:{{events.location}}</h3>
+  </div>
+  <h4>Contact:{{events.mobilenumber}}</h4>
+
     </mat-expansion-panel>
-    <mat-expansion-panel (opened)="panelOpenState = true"
-                         (closed)="panelOpenState = false">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Self aware panel
-        </mat-panel-title>
-        <mat-panel-description>
-          Currently I am {{panelOpenState ? 'open' : 'closed'}}
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <p>I'm visible because I am open</p>
-    </mat-expansion-panel>
+  
   </mat-accordion>
 </div>
