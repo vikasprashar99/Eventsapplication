@@ -15,14 +15,14 @@ export class AddEventFormComponent implements OnInit {
 
   ngOnInit() {
   }
+  // OPEN DIALOG BUTTON
   openDialog() {
-
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
-    this.dialog.open(EventDialogComponent,{      width: '550px',
+    this.dialog.open(EventDialogComponent,{width: '550px',
   });
 }
 showAllEvents(){
