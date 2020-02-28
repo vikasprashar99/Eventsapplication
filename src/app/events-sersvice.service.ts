@@ -14,8 +14,6 @@ export class EventsSersviceService {
   "http://localhost:8000/getAllEvents";
 postEventsdataEndpoint =
 "http://localhost:8000/addEvent";
-deleteEventsdataEndpoint =
-"http://localhost:8000/deleteEvent";
 
 //API'S
 getAlleventsApiCall(): Observable<any> {
@@ -24,9 +22,7 @@ getAlleventsApiCall(): Observable<any> {
 postEventsDataApiCall(dataBody: any): Observable<any> {
   return this.http.post<any>(this.postEventsdataEndpoint, dataBody);
 }
-deleteEventsDataApiCall(dataBody: any): Observable<any> {
-  return this.http.delete<any>(this.deleteEventsdataEndpoint, dataBody);
-}
+
 
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventsSersviceService } from '../events-sersvice.service';
+import { Router } from '@angular/router';
 
 
 export class Eventsdata{
@@ -25,7 +26,7 @@ export class AlleventsComponent implements OnInit {
 
     panelOpenState = false;
 
-  constructor(private eService:EventsSersviceService) { }
+  constructor(private eService:EventsSersviceService, private router:Router) { }
 
   ngOnInit() {
   //  ASSIGNED EVENTS DATA TO BE SHOWN
@@ -45,6 +46,9 @@ export class AlleventsComponent implements OnInit {
       }
         console.log(this.EventsArray)
     })
+}
+Back(){
+  this.router.navigate(['/addEvent'])
 }
 
 

@@ -1,6 +1,7 @@
 <!-- ALL EVENTS -->
 <div align="center">
-    <h1>EVENTS</h1>
+    <h1>EVENTS</h1><br>
+    <button mat-raised-button color="primary" (click)="Back()">Back</button><br><br>
 <mat-accordion>
     <mat-expansion-panel *ngFor="let events of EventsArray">
       <mat-expansion-panel-header>
@@ -13,7 +14,6 @@
       </mat-expansion-panel-header>
   <h3>Description:{{events.description}}</h3>
   <div fxLayout="row" fxLayoutAlign="space-between center">
-
   <h3>Name of Speaker:{{events.nameOfExpert}}</h3>
   <h3>Location:{{events.location}}</h3>
   </div>
