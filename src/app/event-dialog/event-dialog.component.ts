@@ -68,7 +68,7 @@ getmobilenumberMessage(){
     uid:uuidv4(),
 title:this.title.value,
 nameOfExpert:this.nameOfExpert.value,
-DateOfEvent:this.nameOfExpert.value,
+DateOfEvent:this.DateOfEvent.value,
 TimeOfEvent:this.TimeOfEvent.value,
 description:this.description.value,
 location:this.location.value,
