@@ -1,1 +1,16 @@
+<!-- header -->
+<mat-toolbar class="top-level-header" fullscreen> 
+    <mat-toolbar-row>
+      <span class="example-spacer"></span>
+      <mat-chip-list aria-label="Fish selection">
+        <mat-chip
+          mat-raised-button
+          (click)="Logout()"
+          style="cursor: pointer;"
+          >Logout</mat-chip
+        >
+      </mat-chip-list>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
 <router-outlet></router-outlet>
